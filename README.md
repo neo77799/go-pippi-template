@@ -31,11 +31,14 @@
    - Go (1.20以上)
    - Node.js (18以上)
 
-2. 環境変数の設定:
+2. 環境変数の設定と依存関係のインストール:
    ```bash
-   cp .env.example .env
-   # 必要に応じて.envファイルを編集
+   make dev-init
    ```
+   このコマンドで以下が実行されます:
+   - backend/frontendの.env.exampleを.env.localにコピー
+   - Goモジュールの依存関係をインストール
+   - npmパッケージをインストール
 
 3. Docker環境の構築:
    ```bash

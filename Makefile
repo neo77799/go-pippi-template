@@ -1,3 +1,14 @@
+# 環境初期設定
+dev-init:
+	@echo "開発環境の初期設定を開始します"
+	# .envファイルのコピー
+	cp backend/.env.example backend/.env.local
+	cp frontend/.env.example frontend/.env.local
+	# 依存関係のインストール
+	cd backend && go mod download
+	cd frontend && npm install
+	@echo "開発環境の初期設定が完了しました"
+
 # Docker操作
 docker-build:
 	docker-compose build
